@@ -1,0 +1,85 @@
+show databases;
+create database info22;
+
+use info22;
+
+create table pessoas(
+	codigo int not null auto_increment,
+	nome varchar(30) not null,
+    nascimento date,
+    sexo enum("m","f"),
+    peso decimal(5,2),
+    altura decimal(3,2),
+    nacionalidade varchar(20) default "Brasil",
+    primary key(codigo)
+);
+
+INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade)
+VALUES 
+	('João da Silva', '1990-05-12', 'M', 75.5, 1.80, 'Portugal'),
+	('Maria Souza', '1995-01-23', 'F', 60.3, 1.65, 'México'),
+	('José Santos', '1985-08-17', 'M', 85.0, 1.78, 'Canadá'),
+	('Ana Oliveira', '1992-03-30', 'F', 52.7, 1.60, 'Espanha'),
+	('Carlos Mendes', '1980-11-10', 'M', 92.4, 1.85, 'Alemanha'),
+	('Patricia Almeida', '1998-06-02', 'F', 56.9, 1.68, 'Argentina'),
+	('Marcos Costa', '1991-09-18', 'M', 78.2, 1.82, 'China'),
+	('Laura Santos', '2000-12-05', 'F', 64.1, 1.72, 'França'),
+	('Fernando Lima', '1987-04-25', 'M', 80.5, 1.79, 'Japão'),
+	('Camila Rodrigues', '1993-07-11', 'F', 67.8, 1.75, 'Índia'),
+	('Lucas Silva', '1994-10-20', 'M', 70.2, 1.75, 'Estados Unidos'),
+	('Mariana Pereira', '1991-06-15', 'F', 58.7, 1.65, 'Colômbia'),
+	('Rafael Mendes', '1989-12-05', 'M', 80.3, 1.80, 'Jamaica'),
+	('Carla Rodrigues', '1996-02-28', 'F', 55.6, 1.60, 'Costa Rica'),
+	('Pedro Oliveira', '1992-08-10', 'M', 84.5, 1.85, 'Noruega'),
+	('Marta Santos', '1999-03-07', 'F', 63.8, 1.72, 'Indonésia'),
+	('Fernando Almeida', '1987-07-28', 'M', 82.1, 1.78, 'Tailândia'),
+	('Ana Paula Vieira', '1993-04-02', 'F', 59.4, 1.60, 'Austrália'),
+	('Diego Costa', '1984-11-25', 'M', 91.0, 1.90, 'Mali'),
+	('Juliana Oliveira', '1995-09-12', 'F', 57.2, 1.65, 'Camarões'),
+    ('Miguel Torres', '1998-05-16', 'M', 67.9, 1.77, 'Alemanha'),
+	('Bruna Oliveira', '1990-03-19', 'F', 53.5, 1.60, 'Argentina'),
+	('Vinícius Costa', '1991-12-06', 'M', 89.3, 1.95, 'Chile'),
+	('Carolina Pereira', '1995-09-24', 'F', 55.2, 1.62, 'Singapura'),
+	('Guilherme Santos', '1993-08-18', 'M', 81.7, 1.83, 'Bélgica'),
+	('Letícia Lima', '1996-07-21', 'F', 48.9, 1.55, 'Nova Zelândia'),
+	('Rafaela Alves', '1992-04-02', 'F', 60.3, 1.70, 'Índia'),
+	('Gustavo Souza', '1989-11-11', 'M', 75.6, 1.81, 'Austrália'),
+	('Thiago Rodrigues', '1994-02-25', 'M', 91.8, 1.90, 'Peru'),
+	('Marcela Silva', '1988-09-07', 'F', 63.2, 1.68, 'Japão'),
+    ('Ana Paula Castro', '1993-07-12', 'F', 63.5, 1.65, 'Espanha'),
+	('Lucas Ferreira', '1988-05-18', 'M', 78.4, 1.78, 'Suíça'),
+	('Fernanda Lima', '1990-11-30', 'F', 54.2, 1.63, 'México'),
+	('Gustavo Oliveira', '1994-09-01', 'M', 81.2, 1.84, 'Canadá'),
+	('Mariana Santos', '1989-02-22', 'F', 59.1, 1.70, 'França'),
+	('Ricardo Pereira', '1991-04-14', 'M', 76.8, 1.81, 'Noruega'),
+	('Beatriz Costa', '1995-08-05', 'F', 51.7, 1.58, 'Estados Unidos'),
+	('João Pedro Almeida', '1992-12-27', 'M', 86.3, 1.91, 'Holanda'),
+	('Maria Eduarda Souza', '1996-03-08', 'F', 47.9, 1.52, 'Irlanda'),
+	('Carlos Eduardo Silva', '1987-06-20', 'M', 93.7, 1.97, 'Inglaterra'),
+    ('Felipe Silva', '1993-08-12', 'M', 70.2, 1.72, 'Argentina'),
+	('Carla Santos', '1988-06-18', 'F', 61.5, 1.68, 'Chile'),
+	('Luiz Oliveira', '1990-12-30', 'M', 84.3, 1.87, 'Alemanha'),
+	('Juliana Ferreira', '1994-10-01', 'F', 57.9, 1.59, 'Austrália'),
+	('Gabriel Almeida', '1989-03-22', 'M', 75.1, 1.78, 'Bélgica'),
+	('Ana Carolina Lima', '1991-05-14', 'F', 49.8, 1.55, 'Japão'),
+	('Rafaela Pereira', '1995-09-05', 'F', 53.2, 1.62, 'Nova Zelândia'),
+	('Pedro Costa', '1992-01-27', 'M', 81.7, 1.93, 'África do Sul'),
+	('Aline Souza', '1996-04-08', 'F', 46.3, 1.51, 'Índia'),
+	('Marcelo Santos', '1987-07-20', 'M', 90.4, 1.95, 'China');
+
+select * from pessoas;
+
+select nome,nacionalidade,sexo from pessoas where nacionalidade = "Alemanha";
+
+select nome,altura,sexo from pessoas where altura >= 1.60 and nacionalidade = "Espanha";
+
+select nome,nascimento,nacionalidade from pessoas where nacionalidade = "China" order by nascimento asc;
+
+select nome,nacionalidade,altura,peso from pessoas where nacionalidade = "França" and peso between 60 and 90;
+
+select nome, nacionalidade from pessoas where nacionalidade in ("África do sul","Mali","Camarões");
+
+select nome,peso,nacionalidade from pessoas where nacionalidade in ("Nova Zelândia","Australia") and peso >= 75.0;
+
+
+
