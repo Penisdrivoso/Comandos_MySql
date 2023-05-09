@@ -1,0 +1,77 @@
+create database info21b;
+use info21b;
+
+create table pessoas(
+	matricula int not null auto_increment,
+	nome varchar(30) not null,
+    nascimento date,
+    sexo enum("m","f"),
+    peso decimal(5,2),
+    altura decimal(5,2),
+    nacionalidade varchar(20) default "Brasil",
+    primary key(matricula)
+);
+
+drop database info21b; 
+
+INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade)
+VALUES 
+  ( 'João', '1963-02-20', 'M', 79.4, 1.73, 'Brasil'),
+  ( 'Maria', '1959-06-17', 'F', 62.7, 1.60, 'Brasil'),
+  ( 'Pedro', '1956-09-05', 'M', 95.2, 1.78, 'Brasil'),
+  ( 'Ana', '1961-04-14', 'F', 55.6, 1.63, 'Brasil'),
+  ( 'Lucas', '1964-08-01', 'M', 80.3, 1.81, 'Brasil'),
+  ( 'Camila', '1960-01-12', 'F', 60.2, 1.68, 'Brasil'),
+  ( 'Fernando', '1959-09-24', 'M', 75.9, 1.76, 'Brasil'),
+  ( 'Mariana', '1962-05-27', 'F', 58.5, 1.62, 'Brasil'),
+  ( 'Roberto', '1958-11-08', 'M', 90.1, 1.80, 'Brasil'),
+  ( 'Carla', '1961-07-19', 'F', 65.3, 1.66, 'Brasil'),
+  ( 'José', '1960-04-03', 'M', 85.7, 1.77, 'Brasil'),
+  ( 'Larissa', '1961-12-08', 'F', 59.8, 1.65, 'Brasil'),
+  ( 'Fábio', '1960-06-10', 'M', 83.4, 1.79, 'Brasil'),
+  ( 'Patrícia', '1959-09-17', 'F', 64.2, 1.63, 'Brasil'),
+  ( 'Joaquim', '1962-01-31', 'M', 97.5, 1.83, 'Brasil'),
+  ( 'Tatiana', '1960-10-04', 'F', 55.9, 1.61, 'Brasil'),
+  ( 'Hugo', '1959-04-11', 'M', 78.6, 1.72, 'Brasil'),
+  ( 'Gabriela', '1963-07-22', 'F', 61.1, 1.60, 'Brasil'),
+  ( 'Maurício', '1962-03-08', 'M', 88.9, 1.78, 'Brasil'),
+  ( 'Lívia', '1961-09-13', 'F', 56.5, 1.59, 'Brasil'),
+  ( 'Ricardo', '1959-12-01', 'M', 82.3, 1.76, 'Brasil'),
+  ( 'John', '1989-01-03', 'M', 74.8, 1.80, 'Estados Unidos'),
+  ( 'Maria', '1991-04-15', 'F', 57.2, 1.65, 'Espanha'),
+  ( 'Pablo', '1988-08-20', 'M', 82.5, 1.76, 'México'),
+  ( 'Lara', '1989-11-02', 'F', 55.9, 1.62, 'Alemanha'),
+  ( 'Giovanni', '1987-12-18', 'M', 90.2, 1.85, 'Italia'),
+  ( 'Aisha', '1990-09-05', 'F', 64.3, 1.68, 'Nigeria'),
+  ( 'Carlos', '1988-06-13', 'M', 78.7, 1.74, 'Colombia'),
+  ( 'Elena', '1989-02-22', 'F', 61.8, 1.65, 'Russia'),
+  ( 'Sebastian', '1987-07-10', 'M', 88.3, 1.79, 'Chile'),
+  ( 'Chloe', '1991-03-04', 'F', 55.6, 1.59, 'Canada'),
+  ( 'Saeed', '1988-05-06', 'M', 84.2, 1.80, 'Irã'),
+  ( 'Gloria', '1987-08-17', 'F', 65.7, 1.64, 'Peru'),
+  ( 'Hans', '1989-12-31', 'M', 95.1, 1.87, 'Austría'),
+  ( 'Ayman', '1987-10-03', 'F', 53.7, 1.58, 'Síria'),
+  ( 'Erik', '1986-04-12', 'M', 80.2, 1.71, 'Noruegua'),
+  ( 'Fatima', '1988-02-28', 'F', 59.6, 1.62, 'Marrocos'),
+  ( 'Marco', '1987-06-18', 'M', 86.9, 1.83, 'Italia'),
+  ( 'Maha', '1989-09-13', 'F', 58.5, 1.63, 'Arábia Saudita'),
+  ( 'Lars', '1986-11-15', 'M', 82.4, 1.77, 'Suecia'),
+  ( 'Nadia', '1990-07-24', 'F', 56.1, 1.58, 'Tunisia');
+  
+  select * from pessoas;
+  
+  select * from pessoas order by nome;
+  select * from pessoas order by nome asc;
+  select * from pessoas order by nome desc;
+  
+  select nome, peso from pessoas;
+  select nome, peso from pessoas where peso > 85.0;
+ select nome, nacionalidade from pessoas order by nacionalidade, nome;
+ select * from pessoas where sexo = "m";
+ select * from pessoas where sexo = "f";
+ 
+ select * from pessoas where altura > 1.6 order by altura desc;
+ select * from pessoas where altura between 1.6 and 1.9;
+ 
+ select * from pessoas where not nacialidade = "Brasil";
+  
