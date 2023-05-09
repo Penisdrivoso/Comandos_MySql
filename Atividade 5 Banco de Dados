@@ -1,7 +1,7 @@
 show databases;
-create database info22;
+create database info21A;
 
-use info22;
+use info21A;
 
 create table pessoas(
 	codigo int not null auto_increment,
