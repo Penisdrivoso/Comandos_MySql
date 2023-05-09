@@ -12,7 +12,7 @@ create table pessoas(
     primary key(matricula)
 );
 
-drop database info21b; 
+drop database info21A; 
 
 INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade)
 VALUES 
