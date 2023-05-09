@@ -1,5 +1,5 @@
-create database info21b;
-use info21b;
+create database info21A;
+use info21A;
 
 create table pessoas(
 	matricula int not null auto_increment,
