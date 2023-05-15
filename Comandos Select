@@ -74,4 +74,47 @@ VALUES
  select * from pessoas where altura between 1.6 and 1.9;
  
  select * from pessoas where not nacialidade = "Brasil";
-  
+ 
+ /*Abaixo um "filtro" no qual pega todas as pessoas que começam com a letra "P" no nome*/
+ 
+ select * from pessoas where nome like "p%";
+ /*O mesmo filtro no qual pega todas as pessoas que terminam com a letra "A" */
+ select * from pessoas where nome like "%a";
+ /*Abaixo o mesmo filtro no qual pega uma letra M que está entre outros dois caracteres*/
+ select * from pessoas where nome like "_%m%_";
+ /*"FILTRO" que procura nomes com a inciais "C" e terminam com "A" */
+ select * from pessoas where nome like "c%a";
+ /*Filtro que mostra que tenha "A" como segunda letra e última letra*/
+ select * from pessoas where nome like "_a%a";
+ 
+ /*ATENÇÃO - A quantidade de underline (_) é a quantidade de caracteres que podem existir na frente da letra. EXEMPLO ABAIXO*/
+ 
+ select * from pessoas where nome like "__m%";
+ 
+ /*Podemos também colocar um minimo de caracteres*/
+ 
+ select * from pessoas where nome like "___%";
+ 
+ /*selecionar todas as nacionalidades*/
+ select nacionalidade from pessoas; 
+  /*selecionar todas as nacionalidades por ordem alfabetica*/
+ select nacionalidade from pessoas order by nacionalidade;
+ /*Para selecionar a nacionalidade diferente sem repetir*/
+  /*selecionar todas as nacionalidades*/
+ select distinct nacionalidade from pessoas;
+ 
+ /*contador*/
+ select count(*) from pessoas;
+ 
+ select count(*) from pessoas where sexo ='f';
+ /*Maximo de um grupo especifico*/
+ select max(altura) from pessoas;
+ 
+ select max(altura) from pessoas where sexo = 'f' and nacionalidade ="Brasil";
+ /*Minimo de um grupo especifico*/
+ select min (altura) from pessoas;
+ /*calcula a soma*/
+ select sum (peso) from pessoas;
+ /*calcula a média */
+ select avg (peso) from pessoas;
+ 
