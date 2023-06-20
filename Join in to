@@ -1,0 +1,51 @@
+create database cadastro;
+use cadastro;
+
+drop database cadastro;
+
+create table cursos(
+	id int auto_increment primary key,
+    nome varchar(30),
+    descricao text,
+    totalAulas int,
+    ano year
+);
+
+insert into cursos values
+(1,"HTML%5","HTML5",40,2020),
+(2,"CSS","CSS",30,2020),
+(3,"JS","JS",40,2020),
+(4,"PHP","PHP",40,2020),
+(5,"JAVA","JAVA",40,2020),
+(6,"RENAN","RENAN",40,2020);
+
+create table alunos(
+	id int auto_increment primary key,
+    nome varchar(30),
+    nascimento date,
+    idCursoPreferido int,
+    foreign key(idCursoPreferido) references cursos(id)
+
+);
+
+insert into alunos values (1,"Thiago","2010-03-01",6);
+insert into alunos values (default,"Renan","2010-03-01",null);
+insert into alunos values (default,"Andre","2010-03-01",1);
+insert into alunos values (default,"Bruno","2010-03-01",2);
+
+select * from alunos inner join cursos on alunos.idCursoPreferido = cursos.id;
+select * from alunos left join cursos on alunos.idCursoPreferido = cursos.id;
+select * from alunos right join cursos on alunos.idCursoPreferido = cursos.id;
+
+create table assiste(
+id int auto_increment primary key,
+idAluno int,
+foreign key (idAluno) references alunos(id),
+idCursos int, 
+foreign key(idCursos) references cursos(id)
+);
+
+truncate assiste;
+insert into assiste
+values (1,1,1), (3,1,4), (4,2,5);
+select * from assiste;
